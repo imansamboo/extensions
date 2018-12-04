@@ -21,8 +21,9 @@ class ExtensionsController extends Controller
      */
     public function index(Request $request)
     {
+        $q = $request->get('q');
         $extensions = Extension::all();
-        return view('categories.index', compact('categories', 'q'));
+        return view('extensions.index', compact('extensions', 'q'));
     }
     /**
      * Show the form for creating a new resource.
@@ -31,7 +32,7 @@ class ExtensionsController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('extensions.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -42,12 +43,13 @@ class ExtensionsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|string|max:255|unique:categories',
-            'description' => 'required|string|unique:categories',
+            'name' => 'required|string|unique:extensions',
+            'secret' => 'required|string',
+            'extension' => 'required|string|unique:extensions',
         ]);
         Extension::create($request->all());
-        //flash($request->get('title') . ' category saved.')->success()->important();
-        return redirect()->route('categories.index');
+        //flash($request->get('title') . ' extension saved.')->success()->important();
+        return redirect()->route('extensions.index');
     }
     /**
      * Display the specified resource.
@@ -67,8 +69,8 @@ class ExtensionsController extends Controller
      */
     public function edit($id)
     {
-        $category = Extension::findOrFail($id);
-        return view('categories.edit', compact('category'));
+        $extension = Extension::findOrFail($id);
+        return view('extensions.edit', compact('extension'));
     }
     /*
     * Update the specified resource in storage.
@@ -79,14 +81,14 @@ class ExtensionsController extends Controller
     */
     public function update(Request $request, $id)
     {
-        $category = Extension::findOrFail($id);
+        $extension = Extension::findOrFail($id);
         $this->validate($request, [
-            'title' => 'required|string|max:255|unique:categories,title,' . $category->id,
+            'title' => 'required|string|max:255|unique:extensions,title,' . $extension->id,
             'description' => 'required|string'
         ]);
-        $category->update($request->all());
-        //flash($request->get('title') . ' category updated.')->success()->important();
-        return redirect()->route('categories.index');
+        $extension->update($request->all());
+        //flash($request->get('title') . ' extension updated.')->success()->important();
+        return redirect()->route('extensions.index');
     }
     /**
      * Remove the specified resource from storage.
@@ -97,7 +99,7 @@ class ExtensionsController extends Controller
     public function destroy(Request $request, $id)
     {
         Extension::find($id)->delete();
-        //flash($request->get('title') . ' category deleted.')->success()->important();
-        return redirect()->route('categories.index');
+        //flash($request->get('title') . ' extension deleted.')->success()->important();
+        return redirect()->route('extensions.index');
     }
 }
