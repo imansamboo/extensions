@@ -1,5 +1,6 @@
 {
     "name": "imansamboo/call-center-extension",
+    "version": "1.0.0",
     "description": "this plugin provided for call center extension",
     "authors": [
         {
@@ -8,6 +9,7 @@
         }
     ],
     "require": {
+        "php": ">=7.0.0"
     },
     "autoload": {
         "classmap": [
