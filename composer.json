@@ -1,0 +1,11 @@
+{
+    "name": "imansamboo/call-center-extension",
+    "description": "this plugin provided for call center extension",
+    "authors": [
+        {
+            "name": "m.jafari",
+            "email": "imansamboo@gmail.com"
+        }
+    ],
+    "require": {}
+}
