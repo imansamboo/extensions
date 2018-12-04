@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "this plugin provided for call center extension",
     "minimum-stability": "stable",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "m.jafari",
