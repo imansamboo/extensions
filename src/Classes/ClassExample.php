@@ -1,6 +1,6 @@
 <?php
 
-namespace Yk\LaravelPackageExample\Classes;
+namespace PPF\Extensions\Classes;
 
 class ClassExample {
 

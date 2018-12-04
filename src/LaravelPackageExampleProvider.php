@@ -30,7 +30,7 @@ class LaravelPackageExampleProvider extends ServiceProvider
         // Method 2
         // A Better method, extend the app routes by adding a group with a specified namespace
 
-        $this->app->router->group(['namespace' => 'Yk\LaravelPackageExample\App\Http\Controllers'],
+        $this->app->router->group(['namespace' => 'PPF\Extensons\App\Http\Controllers'],
             function(){
                 require __DIR__.'/routes/web.php';
             }
@@ -40,7 +40,7 @@ class LaravelPackageExampleProvider extends ServiceProvider
         * Views
         * use: view('PackageName::view_name');
         */
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'Yk\LaravelPackageExample');
+        $this->loadViewsFrom(__DIR__.'/resources/views/extensions', 'PPF\Extensons');
 
         /*
         * php artisan vendor:publish
@@ -50,23 +50,23 @@ class LaravelPackageExampleProvider extends ServiceProvider
         // Publish views to resources/views/vendor/vendor-name/package-name
         $this->publishes(
             [
-                __DIR__.'/resources/views' => base_path('resources/views/vendor/yk/laravel-package-example'),
+                __DIR__.'/resources/views/extensions' => base_path('resources/views/vendor/PPF/Extensons'),
             ]
         );
 
         // Publish assets to public/vendor/vendor-name/package-name
         $this->publishes([
-            __DIR__.'/public' => public_path('vendor/yk/laravel-package-example'),
+            __DIR__.'/public' => public_path('vendor/PPF/Extensons'),
         ], 'public');
 
         // Publish configurations to config/vendor/vendor-name/package-name
         // Config::get('vendor.yk.laravel-package-example')
         $this->publishes([
-            __DIR__.'/config' => config_path('vendor/yk/laravel-package-example'),
+            __DIR__.'/config' => config_path('vendor/PPF/Extensons'),
         ]);
 
         $kernel = $this->app['Illuminate\Contracts\Http\Kernel'];
-        $kernel->pushMiddleware('Yk\LaravelPackageExample\App\Http\Middleware\MiddlewareExample');
+        //$kernel->pushMiddleware('Yk\LaravelPackageExample\App\Http\Middleware\MiddlewareExample');
 
         /**
          * Register migrations, so they will be automatically run when the php artisan migrate command is executed.
@@ -78,7 +78,7 @@ class LaravelPackageExampleProvider extends ServiceProvider
          */
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \Yk\LaravelPackageExample\App\Console\Commands\Hello::class,
+                \PPF\Extensons\App\Console\Commands\Hello::class,
             ]);
         }
 
@@ -96,11 +96,11 @@ class LaravelPackageExampleProvider extends ServiceProvider
         * Config::get('packages.Yk.LaravelPackageExample')
         */
         $this->mergeConfigFrom(
-            __DIR__.'/config/app.php', 'packages.Yk.LaravelPackageExample.app'
+            __DIR__.'/config/app.php', 'packages.PPF.Extensons.app'
         );
 
         $this->app->bind('ClassExample', function(){
-            return $this->app->make('Yk\LaravelPackageExample\Classes\ClassExample');
+            return $this->app->make('PPF\Extensons\Classes\ClassExample');
         });
 
     }
