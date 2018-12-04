@@ -1,10 +1,10 @@
 <?php
 
-namespace Yk\LaravelPackageExample;
+namespace PPF\Extensions;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelPackageExampleProvider extends ServiceProvider
+class CallCenterExtensionProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
