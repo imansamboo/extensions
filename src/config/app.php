@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel Package Example',
+    'name' => 'extension plugin for laravel',
 
     'version' => '1.0.0',
 

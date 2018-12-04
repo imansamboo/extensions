@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/laravel-package-example', 'HomeController@index');
+Route::resource('extensions', 'ExtensionsController');
