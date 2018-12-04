@@ -2,7 +2,7 @@
     "name": "imansamboo/call-center-extension",
     "version": "1.0.0",
     "description": "this plugin provided for call center extension",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "m.jafari",
