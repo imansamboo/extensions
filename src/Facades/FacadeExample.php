@@ -1,6 +1,6 @@
 <?php
 
-namespace Yk\LaravelPackageExample\Facades;
+namespace PPF\Extensons\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

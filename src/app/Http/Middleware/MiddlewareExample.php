@@ -1,6 +1,6 @@
 <?php
 
-namespace Yk\LaravelPackageExample\App\Http\Middleware;
+namespace PPF\Extensons\App\Http\Middleware;
 
 use Closure;
 
