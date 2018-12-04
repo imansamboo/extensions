@@ -8,9 +8,6 @@
         }
     ],
     "require": {
-        "laracasts/flash": "^3.0",
-        "twbs/bootstrap": "^4.1",
-        "laravelcollective/html": "~5.4"
     },
     "autoload": {
         "classmap": [
