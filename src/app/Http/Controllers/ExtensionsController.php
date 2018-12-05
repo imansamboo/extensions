@@ -83,8 +83,9 @@ class ExtensionsController extends Controller
     {
         $extension = Extension::findOrFail($id);
         $this->validate($request, [
-            'title' => 'required|string|max:255|unique:extensions,title,' . $extension->id,
-            'description' => 'required|string'
+            'name' => 'required|string|unique:extensions',
+            'secret' => 'required|string',
+            'extension' => 'required|string|unique:extensions',
         ]);
         $extension->update($request->all());
         //flash($request->get('title') . ' extension updated.')->success()->important();
