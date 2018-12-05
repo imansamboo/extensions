@@ -24,6 +24,7 @@ class CreateExtensionsTable extends Migration
             $table->char('name', 100);
             $table->char('extension', 16);
             $table->string('secret');
+            $table->timestamps();
         });
     }
 

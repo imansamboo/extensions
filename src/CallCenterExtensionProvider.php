@@ -50,7 +50,7 @@ class CallCenterExtensionProvider extends ServiceProvider
         // Publish views to resources/views/vendor/vendor-name/package-name
         $this->publishes(
             [
-                __DIR__.'/resources/views/extensions' => base_path('resources/views/vendor/PPF/Extensons'),
+                __DIR__.'/resources/views/extensions' => base_path('resources/views/Extensons'),
             ]
         );
 
