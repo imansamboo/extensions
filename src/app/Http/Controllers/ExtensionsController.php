@@ -48,7 +48,7 @@ class ExtensionsController extends Controller
             'extension' => 'required|string|unique:extensions',
         ]);
         Extension::create($request->all());
-        //flash($request->get('title') . ' extension saved.')->success()->important();
+        flash($request->get('title') . ' extension saved.')->success()->important();
         return redirect()->route('extensions.index');
     }
     /**
@@ -88,7 +88,7 @@ class ExtensionsController extends Controller
             'extension' => 'required|string|unique:extensions',
         ]);
         $extension->update($request->all());
-        //flash($request->get('title') . ' extension updated.')->success()->important();
+        flash($request->get('title') . ' extension updated.')->success()->important();
         return redirect()->route('extensions.index');
     }
     /**
@@ -100,7 +100,7 @@ class ExtensionsController extends Controller
     public function destroy(Request $request, $id)
     {
         Extension::find($id)->delete();
-        //flash($request->get('title') . ' extension deleted.')->success()->important();
+        flash($request->get('title') . ' extension deleted.')->success()->important();
         return redirect()->route('extensions.index');
     }
 }

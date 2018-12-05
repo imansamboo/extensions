@@ -38,7 +38,9 @@
                     @endforeach
                     </tbody>
                 </table>
+{{--
                 {!! $extensions->appends(compact('q'))->links() !!}
+--}}
             </div>
         </div>
     </div>

@@ -11,4 +11,4 @@
 |
 */
 
-Route::resource('extensions', 'ExtensionsController');
+Route::resource('extensions', 'ExtensionsController')->middleware('web');
