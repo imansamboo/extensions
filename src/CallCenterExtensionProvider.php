@@ -30,7 +30,7 @@ class CallCenterExtensionProvider extends ServiceProvider
         // Method 2
         // A Better method, extend the app routes by adding a group with a specified namespace
 
-        $this->app->router->group(['namespace' => 'PPF\Extensons\App\Http\Controllers'],
+        $this->app->router->group(['namespace' => 'PPF\Extensions\App\Http\Controllers'],
             function(){
                 require __DIR__.'/routes/web.php';
             }
@@ -40,7 +40,7 @@ class CallCenterExtensionProvider extends ServiceProvider
         * Views
         * use: view('PackageName::view_name');
         */
-        $this->loadViewsFrom(__DIR__.'/resources/views/extensions', 'PPF\Extensons');
+        $this->loadViewsFrom(__DIR__.'/resources/views/extensions', 'PPF\Extensions');
 
         /*
         * php artisan vendor:publish
@@ -50,19 +50,19 @@ class CallCenterExtensionProvider extends ServiceProvider
         // Publish views to resources/views/vendor/vendor-name/package-name
         $this->publishes(
             [
-                __DIR__.'/resources/views/extensions' => base_path('resources/views/Extensons'),
+                __DIR__.'/resources/views/extensions' => base_path('resources/views/Extensions'),
             ]
         );
 
         // Publish assets to public/vendor/vendor-name/package-name
         $this->publishes([
-            __DIR__.'/public' => public_path('vendor/PPF/Extensons'),
+            __DIR__.'/public' => public_path('vendor/PPF/Extensions'),
         ], 'public');
 
         // Publish configurations to config/vendor/vendor-name/package-name
         // Config::get('vendor.yk.laravel-package-example')
         $this->publishes([
-            __DIR__.'/config' => config_path('vendor/PPF/Extensons'),
+            __DIR__.'/config' => config_path('vendor/PPF/Extensions'),
         ]);
 
         $kernel = $this->app['Illuminate\Contracts\Http\Kernel'];
@@ -78,7 +78,7 @@ class CallCenterExtensionProvider extends ServiceProvider
          */
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \PPF\Extensons\App\Console\Commands\Hello::class,
+                \PPF\Extensions\App\Console\Commands\Hello::class,
             ]);
         }
 
@@ -96,11 +96,11 @@ class CallCenterExtensionProvider extends ServiceProvider
         * Config::get('packages.Yk.LaravelPackageExample')
         */
         $this->mergeConfigFrom(
-            __DIR__.'/config/app.php', 'packages.PPF.Extensons.app'
+            __DIR__.'/config/app.php', 'packages.PPF.Extensions.app'
         );
 
         $this->app->bind('ClassExample', function(){
-            return $this->app->make('PPF\Extensons\Classes\ClassExample');
+            return $this->app->make('PPF\Extensions\Classes\ClassExample');
         });
 
     }

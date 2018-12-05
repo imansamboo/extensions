@@ -18,7 +18,7 @@
             "src/"
         ],
         "psr-4": {
-            "PPF\\Extensons\\": "src/"
+            "PPF\\Extensions\\": "src/"
         }
     }
 }

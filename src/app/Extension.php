@@ -6,7 +6,7 @@
  * Time: 12:25 PM
  */
 
-namespace PPF\Extensons\App;
+namespace PPF\Extensions\App;
 use Illuminate\Database\Eloquent\Model;
 
 

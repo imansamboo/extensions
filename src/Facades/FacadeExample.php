@@ -1,6 +1,6 @@
 <?php
 
-namespace PPF\Extensons\Facades;
+namespace PPF\Extensions\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

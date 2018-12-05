@@ -1,10 +1,10 @@
 <?php
 
-namespace PPF\Extensons\App\Http\Controllers;
+namespace PPF\Extensions\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use YPPF\Extensons\App\Extension;
+use PPF\Extensions\App\Extension;
 
 
 class ExtensionsController extends Controller

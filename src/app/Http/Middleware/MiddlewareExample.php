@@ -1,6 +1,6 @@
 <?php
 
-namespace PPF\Extensons\App\Http\Middleware;
+namespace PPF\Extensions\App\Http\Middleware;
 
 use Closure;
 

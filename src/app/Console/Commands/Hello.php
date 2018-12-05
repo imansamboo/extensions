@@ -1,6 +1,6 @@
 <?php
 
-namespace PPF\Extensons\App\Console\Commands;
+namespace PPF\Extensions\App\Console\Commands;
 
 use Illuminate\Console\Command;
 
